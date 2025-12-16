@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Antony Benny | SEO Expert in Kerala</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --bg-body: #000000;
+            --bg-surface: #0a0a0a;
+            --bg-card: #111111;
+            --bg-card-hover: #161616;
+            --text-main: #ffffff;
+            --text-muted: #bdc5d3;
+            --border-color: #27272a;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --gradient-text: linear-gradient(to right, #60a5fa, #c084fc);
+            --gradient-cta: linear-gradient(135deg, #1e40af, #7e22ce);
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-main);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .text-accent { color: var(--accent) !important; }
+        .section-subtitle { color: var(--text-muted); font-size: 1.125rem; font-weight: 300; }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+        .navbar-brand { font-weight: 800; color: var(--text-main) !important; }
+        .nav-link { color: var(--text-muted) !important; font-weight: 500; transition: color 0.2s ease; margin: 0 0.5rem; }
+        .nav-link:hover, .nav-link.active { color: var(--text-main) !important; }
+        
+        .btn-contact {
+            background-color: var(--text-main);
+            color: var(--bg-body);
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 0.6rem 1.8rem;
+            border: none;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-contact:hover { background-color: #e2e8f0; transform: translateY(-2px); }
+
+        /* Header */
+        .page-header {
+            padding-top: 10rem;
+            padding-bottom: 5rem;
+            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1) 0%, rgba(0, 0, 0, 0) 50%);
+            text-align: center;
+        }
+
+        /* Cards */
+        .card-custom {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        .card-custom:hover {
+            background-color: var(--bg-card-hover);
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-5px);
+        }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 2rem; border-left: 2px solid var(--border-color); }
+        .timeline-item { position: relative; margin-bottom: 3rem; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.65rem;
+            top: 0.25rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            background: var(--bg-body);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050505;
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 0 2rem;
+        }
+        .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .footer-link:hover { color: var(--accent); }
+        .social-link {
+            width: 2.5rem; height: 2.5rem; border-radius: 50%;
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-muted); text-decoration: none; transition: all 0.3s;
+        }
+        .social-link:hover { background-color: var(--accent); color: white; border-color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fs-4" href="index.html">Antony<span class="text-accent">Benny</span></a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="index.html#contact" class="btn btn-contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-3 mb-3">About <span class="text-accent">Me</span></h1>
+            <p class="lead mx-auto" style="max-width: 600px;">The journey from an MCA graduate to a leading SEO expert in Kerala.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                         <div class="position-absolute top-0 start-0 w-100 h-100 bg-accent opacity-10 rounded-4 blur-xl" style="filter: blur(40px); z-index: -1;"></div>
+                        <img src="Images/antonybenny-seo-exper-in-kerala.jpg" alt="Antony Benny Working" class="img-fluid rounded-4 border border-secondary border-opacity-25 shadow-lg w-100">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="h1 fw-bold mb-4">Driven by Data, Inspired by Growth</h2>
+                    <p class="mb-4">Hello! I'm Antony Benny. My journey into the world of digital marketing wasn't accidental—it was a calculated move fueled by a passion for technology and business growth.</p>
+                    <p class="mb-4">Holding a <strong>Master of Computer Applications (MCA)</strong> degree, I possess a unique advantage in the SEO landscape. I don't just understand marketing content; I understand the code that powers the web. This technical background allows me to diagnose complex site issues, optimize structure, and communicate effectively with development teams.</p>
+                    <p>Based in the vibrant cultural capital of Thrissur, Kerala, I work with clients globally, bridging the gap between local businesses and the worldwide web.</p>
+                    
+                    <div class="row g-4 mt-2">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-mortarboard fs-2 text-accent"></i>
+                                <div>
+                                    <div class="fw-bold text-white">MCA Graduate</div>
+                                    <div class="small text-muted">Technical Foundation</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-globe fs-2 text-accent"></i>
+                                <div>
+                                    <div class="fw-bold text-white">Global Reach</div>
+                                    <div class="small text-muted">Clients Worldwide</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-5 bg-dark-lighter" style="background-color: var(--bg-surface);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white">Core Values</h2>
+                <p class="section-subtitle">The principles that guide every project I undertake.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-check-circle fs-1 text-accent mb-3"></i>
+                        <h4 class="text-white">Transparency</h4>
+                        <p class="small mb-0">No hidden tactics or secret sauces. You get clear reports and honest communication about what's working.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-laptop fs-1 text-accent mb-3"></i>
+                        <h4 class="text-white">Continuous Learning</h4>
+                        <p class="small mb-0">SEO changes daily. I stay updated with the latest Google algorithms to keep your site ahead of the curve.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-heart fs-1 text-accent mb-3"></i>
+                        <h4 class="text-white">Client Success First</h4>
+                        <p class="small mb-0">Your ROI is my metric. If you aren't growing, I'm not succeeding. I treat your business like my own.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5">
+        <div class="container">
+            <div class="p-5 rounded-5 text-center position-relative overflow-hidden" style="background: var(--gradient-cta);">
+                <div class="position-relative z-1">
+                    <h2 class="display-6 fw-bold text-white mb-4">Ready to work with me?</h2>
+                    <p class="mb-4 text-white opacity-75">Let's discuss how we can take your business to the next level.</p>
+                    <a href="index.html#contact" class="btn btn-light rounded-pill px-5 py-3 fw-bold text-primary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-6">
+                    <a class="navbar-brand fs-3 text-white d-block mb-3" href="index.html">Antony<span class="text-accent">Benny</span></a>
+                    <p class="text-muted small mb-4" style="max-width: 350px;">
+                        Helping businesses dominate search rankings with proven SEO strategies. Based in Kerala, serving clients globally.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h5 class="text-white fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="index.html" class="footer-link small">Home</a></li>
+                        <li><a href="about.html" class="footer-link small">About</a></li>
+                        <li><a href="blog.html" class="footer-link small">Blog</a></li>
+                        <li><a href="index.html#contact" class="footer-link small">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary border-opacity-25 pt-4">
+                <p class="text-muted small mb-0 text-center">&copy; 2024 Antony Benny. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Blog & Insights | Antony Benny</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --bg-body: #000000;
+            --bg-surface: #0a0a0a;
+            --bg-card: #111111;
+            --bg-card-hover: #161616;
+            --text-main: #ffffff;
+            --text-muted: #bdc5d3;
+            --border-color: #27272a;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --gradient-text: linear-gradient(to right, #60a5fa, #c084fc);
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 { color: var(--text-main); font-weight: 700; letter-spacing: -0.02em; }
+        p { color: var(--text-muted); line-height: 1.7; }
+        .text-accent { color: var(--accent) !important; }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+        .navbar-brand { font-weight: 800; color: var(--text-main) !important; }
+        .nav-link { color: var(--text-muted) !important; font-weight: 500; transition: color 0.2s ease; margin: 0 0.5rem; }
+        .nav-link:hover, .nav-link.active { color: var(--text-main) !important; }
+        .btn-contact {
+            background-color: var(--text-main); color: var(--bg-body); font-weight: 700;
+            border-radius: 50px; padding: 0.6rem 1.8rem; border: none; text-decoration: none; transition: all 0.3s;
+        }
+        .btn-contact:hover { background-color: #e2e8f0; transform: translateY(-2px); }
+
+        /* Blog Header */
+        .blog-header {
+            padding-top: 10rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 4rem;
+        }
+
+        /* Blog Card */
+        .blog-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+        .blog-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #1a1a1a;
+        }
+        .blog-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .category-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .read-more { font-size: 0.9rem; font-weight: 600; text-decoration: none; color: var(--text-main); margin-top: auto; }
+        .read-more:hover { color: var(--accent); }
+
+        /* Newsletter */
+        .newsletter-box {
+            background: linear-gradient(135deg, #111111, #161616);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+        }
+        .form-control {
+            background-color: var(--bg-body); border: 1px solid var(--border-color); color: var(--text-main);
+            padding: 0.8rem 1.2rem; border-radius: 0.75rem;
+        }
+        .form-control:focus { background-color: var(--bg-body); border-color: var(--accent); color: var(--text-main); box-shadow: none; }
+
+        /* Footer */
+        footer { background-color: #050505; border-top: 1px solid var(--border-color); padding: 5rem 0 2rem; }
+        .footer-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .footer-link:hover { color: var(--accent); }
+        .social-link {
+            width: 2.5rem; height: 2.5rem; border-radius: 50%;
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-muted); text-decoration: none; transition: all 0.3s;
+        }
+        .social-link:hover { background-color: var(--accent); color: white; border-color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fs-4" href="index.html">Antony<span class="text-accent">Benny</span></a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="index.html#contact" class="btn btn-contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="blog-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">SEO Insights & <br>Digital Strategies</h1>
+                    <p class="lead text-muted">Actionable advice to help you rank higher, drive traffic, and grow your business.</p>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Search Bar -->
+                    <div class="input-group mt-4 mt-lg-0">
+                        <input type="text" class="form-control" placeholder="Search articles...">
+                        <button class="btn btn-primary px-4 fw-bold" type="button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="pb-5">
+        <div class="container">
+            <!-- Categories -->
+            <div class="d-flex flex-wrap gap-2 mb-5 justify-content-center justify-content-lg-start">
+                <button class="btn btn-outline-secondary rounded-pill active text-white border-white">All Posts</button>
+                <button class="btn btn-outline-secondary rounded-pill">Technical SEO</button>
+                <button class="btn btn-outline-secondary rounded-pill">Content Strategy</button>
+                <button class="btn btn-outline-secondary rounded-pill">Local SEO</button>
+                <button class="btn btn-outline-secondary rounded-pill">Case Studies</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="row g-4 mb-5">
+                <!-- Article 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        <!-- Placeholder for blog image -->
+                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
+                            <i class="bi bi-image fs-1 opacity-25"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="category-badge">Local SEO</div>
+                            <h3 class="h5 fw-bold text-white mb-3">How to Dominate Local Search in 2024</h3>
+                            <p class="small mb-4">Master Google Business Profile and local citations to capture customers in your immediate area.</p>
+                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
+                            <i class="bi bi-speedometer2 fs-1 opacity-25"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="category-badge">Technical SEO</div>
+                            <h3 class="h5 fw-bold text-white mb-3">Core Web Vitals: A Complete Guide</h3>
+                            <p class="small mb-4">Why page speed and user experience metrics are now critical ranking factors for Google.</p>
+                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
+                            <i class="bi bi-pen fs-1 opacity-25"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="category-badge">Content</div>
+                            <h3 class="h5 fw-bold text-white mb-3">Writing Content That Ranks & Converts</h3>
+                            <p class="small mb-4">Balancing keyword optimization with engaging storytelling to satisfy both bots and humans.</p>
+                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
+                            <i class="bi bi-robot fs-1 opacity-25"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="category-badge">Trends</div>
+                            <h3 class="h5 fw-bold text-white mb-3">AI in SEO: Friend or Foe?</h3>
+                            <p class="small mb-4">Exploring how Artificial Intelligence is reshaping search engines and content creation workflows.</p>
+                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                 <!-- Article 5 -->
+                 <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
+                            <i class="bi bi-cart fs-1 opacity-25"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="category-badge">E-Commerce</div>
+                            <h3 class="h5 fw-bold text-white mb-3">E-Commerce SEO Checklist</h3>
+                            <p class="small mb-4">Essential optimizations for product pages, categories, and site architecture to boost sales.</p>
+                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                 <!-- Article 6 -->
+                 <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
+                            <i class="bi bi-mic fs-1 opacity-25"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="category-badge">Optimization</div>
+                            <h3 class="h5 fw-bold text-white mb-3">Optimizing for Voice Search</h3>
+                            <p class="small mb-4">Adapting your keyword strategy for natural language queries and smart speakers.</p>
+                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8">
+                    <div class="newsletter-box">
+                        <h3 class="h3 fw-bold text-white mb-3">Subscribe to my newsletter</h3>
+                        <p class="text-muted mb-4">Get the latest SEO tips and strategies delivered directly to your inbox. No spam, just value.</p>
+                        <form class="d-flex flex-column flex-sm-row gap-2">
+                            <input type="email" class="form-control" placeholder="Enter your email address">
+                            <button class="btn btn-primary fw-bold px-4 rounded-3">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-6">
+                    <a class="navbar-brand fs-3 text-white d-block mb-3" href="index.html">Antony<span class="text-accent">Benny</span></a>
+                    <p class="text-muted small mb-4" style="max-width: 350px;">
+                        Helping businesses dominate search rankings with proven SEO strategies. Based in Kerala, serving clients globally.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h5 class="text-white fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="index.html" class="footer-link small">Home</a></li>
+                        <li><a href="about.html" class="footer-link small">About</a></li>
+                        <li><a href="blog.html" class="footer-link small">Blog</a></li>
+                        <li><a href="index.html#contact" class="footer-link small">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary border-opacity-25 pt-4">
+                <p class="text-muted small mb-0 text-center">&copy; 2024 Antony Benny. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
