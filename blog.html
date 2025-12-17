@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO Blog & Insights | Antony Benny</title>
+    <title>SEO Insights & Tips | Antony Benny</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -24,6 +24,7 @@
             --accent-hover: #2563eb;
             --accent-glow: rgba(59, 130, 246, 0.15);
             --gradient-text: linear-gradient(to right, #60a5fa, #c084fc);
+            --gradient-cta: linear-gradient(135deg, #1e40af, #7e22ce);
         }
 
         body {
@@ -44,6 +45,7 @@
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 1rem 0;
+            transition: all 0.3s ease;
         }
         .navbar-brand { font-weight: 800; color: var(--text-main) !important; }
         .nav-link { color: var(--text-muted) !important; font-weight: 500; transition: color 0.2s ease; margin: 0 0.5rem; }
@@ -57,9 +59,24 @@
         /* Blog Header */
         .blog-header {
             padding-top: 10rem;
-            padding-bottom: 4rem;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+        }
+
+        /* Filter Buttons */
+        .filter-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--bg-card-hover);
+            border-color: var(--accent);
+            color: var(--text-main);
         }
 
         /* Blog Card */
@@ -67,48 +84,72 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 1.25rem;
-            overflow: hidden;
+            padding: 2rem;
             height: 100%;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         .blog-card:hover {
             transform: translateY(-5px);
             border-color: rgba(59, 130, 246, 0.4);
+            background-color: var(--bg-card-hover);
             box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
         }
-        .blog-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            background-color: #1a1a1a;
-        }
-        .blog-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        
         .category-badge {
+            display: inline-block;
             font-size: 0.75rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.35rem 0.85rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .read-more { font-size: 0.9rem; font-weight: 600; text-decoration: none; color: var(--text-main); margin-top: auto; }
-        .read-more:hover { color: var(--accent); }
 
-        /* Newsletter */
-        .newsletter-box {
-            background: linear-gradient(135deg, #111111, #161616);
-            border: 1px solid var(--border-color);
-            border-radius: 1.5rem;
-            padding: 3rem;
-            text-align: center;
+        .blog-title {
+            font-size: 1.25rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
         }
-        .form-control {
-            background-color: var(--bg-body); border: 1px solid var(--border-color); color: var(--text-main);
-            padding: 0.8rem 1.2rem; border-radius: 0.75rem;
+
+        .blog-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            flex-grow: 1;
         }
-        .form-control:focus { background-color: var(--bg-body); border-color: var(--accent); color: var(--text-main); box-shadow: none; }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-meta i {
+            margin-right: 0.4rem;
+            opacity: 0.7;
+        }
+
+        .read-more { 
+            font-size: 0.9rem; 
+            font-weight: 700; 
+            text-decoration: none; 
+            color: var(--text-main); 
+            display: inline-flex;
+            align-items: center;
+            transition: gap 0.2s;
+        }
+        .read-more:hover { 
+            color: var(--accent); 
+            gap: 0.5rem;
+        }
 
         /* Footer */
         footer { background-color: #050505; border-top: 1px solid var(--border-color); padding: 5rem 0 2rem; }
@@ -146,34 +187,28 @@
     </nav>
 
     <!-- Header -->
-    <header class="blog-header">
+    <header class="blog-header text-center">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-3">SEO Insights & <br>Digital Strategies</h1>
-                    <p class="lead text-muted">Actionable advice to help you rank higher, drive traffic, and grow your business.</p>
-                </div>
-                <div class="col-lg-6">
-                    <!-- Search Bar -->
-                    <div class="input-group mt-4 mt-lg-0">
-                        <input type="text" class="form-control" placeholder="Search articles...">
-                        <button class="btn btn-primary px-4 fw-bold" type="button">Search</button>
-                    </div>
-                </div>
-            </div>
+            <h1 class="display-3 fw-bold mb-3">SEO Insights & Tips</h1>
+            <p class="lead --text-muted mx-auto" style="max-width: 700px;">
+                Stay updated with the latest SEO trends, strategies, and expert tips to keep your business ahead of the competition.
+            </p>
         </div>
     </header>
 
-    <!-- Content -->
+    <!-- Filters & Content -->
     <section class="pb-5">
         <div class="container">
-            <!-- Categories -->
-            <div class="d-flex flex-wrap gap-2 mb-5 justify-content-center justify-content-lg-start">
-                <button class="btn btn-outline-secondary rounded-pill active text-white border-white">All Posts</button>
-                <button class="btn btn-outline-secondary rounded-pill">Technical SEO</button>
-                <button class="btn btn-outline-secondary rounded-pill">Content Strategy</button>
-                <button class="btn btn-outline-secondary rounded-pill">Local SEO</button>
-                <button class="btn btn-outline-secondary rounded-pill">Case Studies</button>
+            <!-- Filter Categories -->
+            <div class="d-flex flex-wrap gap-3 mb-5 justify-content-center">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">SEO Strategy</button>
+                <button class="filter-btn">Technical SEO</button>
+                <button class="filter-btn">Off-Page SEO</button>
+                <button class="filter-btn">SEO News</button>
+                <button class="filter-btn">Content Strategy</button>
+                <button class="filter-btn">Local SEO</button>
+                <button class="filter-btn">E-commerce SEO</button>
             </div>
 
             <!-- Grid -->
@@ -181,107 +216,158 @@
                 <!-- Article 1 -->
                 <div class="col-md-6 col-lg-4">
                     <article class="blog-card">
-                        <!-- Placeholder for blog image -->
-                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
-                            <i class="bi bi-image fs-1 opacity-25"></i>
+                        <div>
+                            <span class="category-badge">SEO Strategy</span>
+                            <h3 class="blog-title fw-bold text-white">How to Improve Your Website SEO to Increase Organic Traffic in 2025</h3>
+                            <p class="blog-excerpt">Uncover the key steps to enhance your website's SEO, attract more organic visitors, and grow your brand with strategies trusted by SEO experts.</p>
+                            <div class="blog-meta">
+                                <span><i class="bi bi-calendar"></i> December 12, 2025</span>
+                                <span><i class="bi bi-clock"></i> 5 min read</span>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <div class="category-badge">Local SEO</div>
-                            <h3 class="h5 fw-bold text-white mb-3">How to Dominate Local Search in 2024</h3>
-                            <p class="small mb-4">Master Google Business Profile and local citations to capture customers in your immediate area.</p>
-                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
-                        </div>
+                        <a href="#" class="read-more mt-auto">Read More <i class="bi bi-arrow-right"></i></a>
                     </article>
                 </div>
 
                 <!-- Article 2 -->
                 <div class="col-md-6 col-lg-4">
                     <article class="blog-card">
-                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
-                            <i class="bi bi-speedometer2 fs-1 opacity-25"></i>
+                        <div>
+                            <span class="category-badge">SEO Strategy</span>
+                            <h3 class="blog-title fw-bold text-white">How Strategic SEO Helps Small Businesses Compete With Big Brands</h3>
+                            <p class="blog-excerpt">Learn how small businesses can use SEO to increase search visibility, attract qualified leads, and grow sustainably alongside larger brands.</p>
+                            <div class="blog-meta">
+                                <span><i class="bi bi-calendar"></i> December 13, 2025</span>
+                                <span><i class="bi bi-clock"></i> 7 min read</span>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <div class="category-badge">Technical SEO</div>
-                            <h3 class="h5 fw-bold text-white mb-3">Core Web Vitals: A Complete Guide</h3>
-                            <p class="small mb-4">Why page speed and user experience metrics are now critical ranking factors for Google.</p>
-                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
-                        </div>
+                        <a href="#" class="read-more mt-auto">Read More <i class="bi bi-arrow-right"></i></a>
                     </article>
                 </div>
 
                 <!-- Article 3 -->
                 <div class="col-md-6 col-lg-4">
                     <article class="blog-card">
-                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
-                            <i class="bi bi-pen fs-1 opacity-25"></i>
+                        <div>
+                            <span class="category-badge">Technical SEO</span>
+                            <h3 class="blog-title fw-bold text-white">The Importance of Mobile-First SEO</h3>
+                            <p class="blog-excerpt">With mobile searches dominating the market, learn why mobile-first SEO is crucial for your business and how to implement it effectively.</p>
+                            <div class="blog-meta">
+                                <span><i class="bi bi-calendar"></i> March 5, 2024</span>
+                                <span><i class="bi bi-clock"></i> 6 min read</span>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <div class="category-badge">Content</div>
-                            <h3 class="h5 fw-bold text-white mb-3">Writing Content That Ranks & Converts</h3>
-                            <p class="small mb-4">Balancing keyword optimization with engaging storytelling to satisfy both bots and humans.</p>
-                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
-                        </div>
+                        <a href="#" class="read-more mt-auto">Read More <i class="bi bi-arrow-right"></i></a>
                     </article>
                 </div>
 
                 <!-- Article 4 -->
                 <div class="col-md-6 col-lg-4">
                     <article class="blog-card">
-                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
-                            <i class="bi bi-robot fs-1 opacity-25"></i>
+                        <div>
+                            <span class="category-badge">Off-Page SEO</span>
+                            <h3 class="blog-title fw-bold text-white">Link Building Strategies That Actually Work</h3>
+                            <p class="blog-excerpt">Explore white-hat link building techniques that can help improve your website's authority and drive more organic traffic.</p>
+                            <div class="blog-meta">
+                                <span><i class="bi bi-calendar"></i> February 28, 2024</span>
+                                <span><i class="bi bi-clock"></i> 8 min read</span>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <div class="category-badge">Trends</div>
-                            <h3 class="h5 fw-bold text-white mb-3">AI in SEO: Friend or Foe?</h3>
-                            <p class="small mb-4">Exploring how Artificial Intelligence is reshaping search engines and content creation workflows.</p>
-                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
-                        </div>
+                        <a href="#" class="read-more mt-auto">Read More <i class="bi bi-arrow-right"></i></a>
                     </article>
                 </div>
 
                  <!-- Article 5 -->
                  <div class="col-md-6 col-lg-4">
                     <article class="blog-card">
-                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
-                            <i class="bi bi-cart fs-1 opacity-25"></i>
+                        <div>
+                            <span class="category-badge">SEO News</span>
+                            <h3 class="blog-title fw-bold text-white">Understanding Google's Latest Algorithm Updates</h3>
+                            <p class="blog-excerpt">Stay ahead of the curve by understanding how recent Google algorithm changes affect your SEO strategy and what you can do to adapt.</p>
+                            <div class="blog-meta">
+                                <span><i class="bi bi-calendar"></i> February 22, 2024</span>
+                                <span><i class="bi bi-clock"></i> 6 min read</span>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <div class="category-badge">E-Commerce</div>
-                            <h3 class="h5 fw-bold text-white mb-3">E-Commerce SEO Checklist</h3>
-                            <p class="small mb-4">Essential optimizations for product pages, categories, and site architecture to boost sales.</p>
-                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
-                        </div>
+                        <a href="#" class="read-more mt-auto">Read More <i class="bi bi-arrow-right"></i></a>
                     </article>
                 </div>
 
                  <!-- Article 6 -->
                  <div class="col-md-6 col-lg-4">
                     <article class="blog-card">
-                        <div class="blog-img d-flex align-items-center justify-content-center text-muted border-bottom border-dark">
-                            <i class="bi bi-mic fs-1 opacity-25"></i>
+                        <div>
+                            <span class="category-badge">Content Strategy</span>
+                            <h3 class="blog-title fw-bold text-white">Content Marketing for Better SEO Results</h3>
+                            <p class="blog-excerpt">Learn how to create SEO-friendly content that not only ranks well but also engages your audience and drives conversions.</p>
+                            <div class="blog-meta">
+                                <span><i class="bi bi-calendar"></i> February 15, 2024</span>
+                                <span><i class="bi bi-clock"></i> 7 min read</span>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <div class="category-badge">Optimization</div>
-                            <h3 class="h5 fw-bold text-white mb-3">Optimizing for Voice Search</h3>
-                            <p class="small mb-4">Adapting your keyword strategy for natural language queries and smart speakers.</p>
-                            <a href="#" class="read-more">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
+                        <a href="#" class="read-more mt-auto">Read More <i class="bi bi-arrow-right"></i></a>
+                    </article>
+                </div>
+                
+                <!-- Article 7 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        <div>
+                            <span class="category-badge">Local SEO</span>
+                            <h3 class="blog-title fw-bold text-white">Local SEO: Complete Guide for Kerala Businesses</h3>
+                            <p class="blog-excerpt">A comprehensive guide on how local businesses in Kerala can optimize their online presence to attract more customers from their area.</p>
+                            <div class="blog-meta">
+                                <span><i class="bi bi-calendar"></i> February 10, 2024</span>
+                                <span><i class="bi bi-clock"></i> 10 min read</span>
+                            </div>
                         </div>
+                        <a href="#" class="read-more mt-auto">Read More <i class="bi bi-arrow-right"></i></a>
+                    </article>
+                </div>
+
+                <!-- Article 8 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        <div>
+                            <span class="category-badge">E-commerce SEO</span>
+                            <h3 class="blog-title fw-bold text-white">E-commerce SEO: Boost Your Online Store Rankings</h3>
+                            <p class="blog-excerpt">Discover proven strategies to optimize your e-commerce website for search engines and drive more sales through organic traffic.</p>
+                            <div class="blog-meta">
+                                <span><i class="bi bi-calendar"></i> February 5, 2024</span>
+                                <span><i class="bi bi-clock"></i> 9 min read</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more mt-auto">Read More <i class="bi bi-arrow-right"></i></a>
+                    </article>
+                </div>
+
+                <!-- Article 9 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        <div>
+                            <span class="category-badge">SEO Strategy</span>
+                            <h3 class="blog-title fw-bold text-white">Keyword Research: Finding the Right Keywords for Your Business</h3>
+                            <p class="blog-excerpt">Master the art of keyword research to target the right audience and improve your website's visibility in search results.</p>
+                            <div class="blog-meta">
+                                <span><i class="bi bi-calendar"></i> January 28, 2024</span>
+                                <span><i class="bi bi-clock"></i> 8 min read</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more mt-auto">Read More <i class="bi bi-arrow-right"></i></a>
                     </article>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Newsletter -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-8">
-                    <div class="newsletter-box">
-                        <h3 class="h3 fw-bold text-white mb-3">Subscribe to my newsletter</h3>
-                        <p class="text-muted mb-4">Get the latest SEO tips and strategies delivered directly to your inbox. No spam, just value.</p>
-                        <form class="d-flex flex-column flex-sm-row gap-2">
-                            <input type="email" class="form-control" placeholder="Enter your email address">
-                            <button class="btn btn-primary fw-bold px-4 rounded-3">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+    <!-- Consultation CTA -->
+    <section class="py-5 bg-dark-lighter" style="background-color: var(--bg-surface);">
+        <div class="container text-center">
+            <h2 class="display-6 fw-bold text-white mb-3">Want Personalized SEO Advice?</h2>
+            <p class="--text-muted mb-4 col-lg-6 mx-auto">Get customized SEO strategies tailored to your business. Schedule a free consultation with Kerala's trusted SEO expert today.</p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="index.html#contact" class="btn btn-light rounded-3 px-5 py-3 fw-bold">Get Free Consultation</a>
+                <a href="index.html#services" class="btn btn-outline-secondary rounded-3 px-5 py-3 fw-bold text-white border-secondary">View Services</a>
             </div>
         </div>
     </section>
@@ -290,19 +376,19 @@
     <footer>
         <div class="container">
             <div class="row g-5 mb-5">
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <a class="navbar-brand fs-3 text-white d-block mb-3" href="index.html">Antony<span class="text-accent">Benny</span></a>
-                    <p class="text-muted small mb-4" style="max-width: 350px;">
+                    <p class="--text-muted small mb-4" style="max-width: 350px;">
                         Helping businesses dominate search rankings with proven SEO strategies. Based in Kerala, serving clients globally.
                     </p>
                     <div class="d-flex gap-3">
                         <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
                         <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
                         <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-2 col-6">
                     <h5 class="text-white fw-bold mb-4">Quick Links</h5>
                     <ul class="list-unstyled d-flex flex-column gap-2">
                         <li><a href="index.html" class="footer-link small">Home</a></li>
@@ -311,9 +397,30 @@
                         <li><a href="index.html#contact" class="footer-link small">Contact</a></li>
                     </ul>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="text-white fw-bold mb-4">Services</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="footer-link small">On-Page SEO</a></li>
+                        <li><a href="#" class="footer-link small">Off-Page SEO</a></li>
+                        <li><a href="#" class="footer-link small">Technical SEO</a></li>
+                        <li><a href="#" class="footer-link small">Local SEO</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5 class="text-white fw-bold mb-4">Contact</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-2 small" style="color: var(--text-muted);"><i class="bi bi-geo-alt"></i> Thrissur, Kerala, India</li>
+                        <li><a href="tel:+918086374912" class="footer-link small d-flex gap-2"><i class="bi bi-telephone"></i> +91 8086374912</a></li>
+                        <li><a href="mailto:antonybennyseo@gmail.com" class="footer-link small d-flex gap-2"><i class="bi bi-envelope"></i> antonybennyseo@gmail.com</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="border-top border-secondary border-opacity-25 pt-4">
-                <p class="text-muted small mb-0 text-center">&copy; 2024 Antony Benny. All rights reserved.</p>
+            <div class="border-top border-secondary border-opacity-25 pt-4 d-flex justify-content-between align-items-center flex-wrap">
+                <p class="--text-muted small mb-0">&copy; 2025 Antony Benny. All rights reserved.</p>
+                <div class="text-muted small">
+                    <a href="#" class="text-decoration-none me-3" style="color: var(--text-muted);">Privacy Policy</a>
+                    <a href="#" class="text-decoration-none" style="color: var(--text-muted);">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>

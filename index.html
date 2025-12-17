@@ -4,6 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antony Benny | SEO Expert in Kerala</title>
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Antony Benny is a trusted SEO Expert in Kerala helping businesses grow with data-driven SEO, local SEO, and organic traffic strategies that deliver long-term results.">
+    <meta name="keywords" content="SEO Expert in Kerala, Antony Benny, SEO Specialist Kerala, SEO Consultant Kerala, Local SEO Kerala, Organic SEO Services">
+    <meta name="author" content="Antony Benny">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://antonybennyseo.com/">
+
+    <!-- Open Graph (Facebook / LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antonybennyseo.com/">
+    <meta property="og:title" content="Antony Benny | SEO Expert in Kerala">
+    <meta property="og:description" content="Helping businesses dominate Google search results with proven SEO strategies. Based in Kerala, serving clients across India and globally.">
+    <meta property="og:image" content="https://antonybennyseo.com/Images/antonybenny-seo-exper-in-kerala.jpg">
+    <meta property="og:site_name" content="Antony Benny SEO">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://antonybennyseo.com/">
+    <meta name="twitter:title" content="Antony Benny | SEO Expert in Kerala">
+    <meta name="twitter:description" content="SEO Expert in Kerala delivering ethical, data-driven SEO strategies to improve rankings, traffic, and business growth.">
+    <meta name="twitter:image" content="https://antonybennyseo.com/Images/antonybenny-seo-exper-in-kerala.jpg">
+
+    <!-- Geo / Local SEO (Optional but Recommended) -->
+    <meta name="geo.region" content="IN-KL">
+    <meta name="geo.placename" content="Kerala">
+    <meta name="geo.position" content="10.8505;76.2711">
+    <meta name="ICBM" content="10.8505, 76.2711">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -189,7 +219,7 @@
         }
 
         /* Unified Card Styles */
-        .feature-card, .skill-card, .testimonial-card, .blog-card, .contact-card, .about-card {
+        .feature-card, .skill-card, .testimonial-card, .blog-card, .contact-card, .about-card, .service-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 1.25rem;
@@ -198,11 +228,48 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .feature-card:hover, .skill-card:hover, .testimonial-card:hover, .blog-card:hover, .contact-card:hover, .about-card:hover {
+        .feature-card:hover, .skill-card:hover, .testimonial-card:hover, .blog-card:hover, .contact-card:hover, .about-card:hover, .service-card:hover {
             background-color: var(--bg-card-hover);
             border-color: rgba(59, 130, 246, 0.4);
             transform: translateY(-5px);
             box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Industry Cards (New) */
+        .industry-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .industry-card:hover {
+            background-color: var(--bg-card-hover);
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .industry-img-wrapper {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .industry-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .industry-card:hover .industry-img-wrapper img {
+            transform: scale(1.05);
         }
 
         /* Icons */
@@ -537,7 +604,7 @@
                     <div class="position-relative">
                         <div class="position-absolute top-0 end-0 w-75 h-75 bg-accent opacity-10 rounded-circle blur-3xl" style="filter: blur(60px); z-index: -1;"></div>
                         <!-- Same image used here as requested -->
-                        <img src="Images/antonybenny-seo-exper-in-kerala.jpg" alt="Antony Benny Profile" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit: cover; aspect-ratio: 4/5;">
+                        <img src="Images/antonybenny-seo-exper-in-kerala.jpg" alt="Antony Benny Profile" class="img-fluid rounded-4 shadow-lg" style="max-height: 550px; width: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -656,7 +723,7 @@
                         </div>
                         <div>
                             <h3 class="h4 fw-bold text-white mb-3">On-Page SEO</h3>
-                            <p class="mb-0 small --text-muted">Optimize your website's content, meta tags, headings, and internal linking structure to improve search engine rankings and user experience.</p>
+                            <p class="mb-0 small">Optimize your website's content, meta tags, headings, and internal linking structure to improve search engine rankings and user experience.</p>
                         </div>
                     </div>
                 </div>
@@ -669,7 +736,7 @@
                         </div>
                         <div>
                             <h3 class="h4 fw-bold text-white mb-3">Off-Page SEO</h3>
-                            <p class="mb-0 small --text-muted">Build high-quality backlinks and improve your website's authority through strategic outreach, guest posting, and brand mentions.</p>
+                            <p class="mb-0 small">Build high-quality backlinks and improve your website's authority through strategic outreach, guest posting, and brand mentions.</p>
                         </div>
                     </div>
                 </div>
@@ -682,7 +749,7 @@
                         </div>
                         <div>
                             <h3 class="h4 fw-bold text-white mb-3">Technical SEO</h3>
-                            <p class="mb-0 small --text-muted">Enhance your website's technical foundation including site speed, mobile optimization, crawlability, and structured data implementation.</p>
+                            <p class="mb-0 small">Enhance your website's technical foundation including site speed, mobile optimization, crawlability, and structured data implementation.</p>
                         </div>
                     </div>
                 </div>
@@ -695,7 +762,58 @@
                         </div>
                         <div>
                             <h3 class="h4 fw-bold text-white mb-3">Local SEO</h3>
-                            <p class="mb-0 small --text-muted">Dominate local search results with Google Business Profile optimization, local citations, and location-based keyword strategies.</p>
+                            <p class="mb-0 small">Dominate local search results with Google Business Profile optimization, local citations, and location-based keyword strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Growth Strategies (New Section) -->
+    <section class="section-padding bg-dark-lighter">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-white mb-3">Industry-Focused SEO Growth Strategies</h2>
+                <p class="section-subtitle">Tailored strategies for specific industries to maximize impact and ROI.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Real Estate -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <div class="industry-img-wrapper">
+                            <img src="Images/E-commerce-SEO.png" alt="E-commerce SEO">
+                        </div>
+                        <div class="p-4 text-center flex-grow-1 d-flex flex-column">
+                            <h3 class="h4 fw-bold text-white mb-3">E-commerce</h3>
+                            <p class="small --text-muted mb-0">SEO for ecommerce brands, online stores and marketplaces to drive more traffic improve product visibility increase conversions and build long term organic growth and authority</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tourism -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <div class="industry-img-wrapper">
+                            <img src="Images/Hotel-SEO.png" alt="Hotel SEO">
+                        </div>
+                        <div class="p-4 text-center flex-grow-1 d-flex flex-column">
+                            <h3 class="h4 fw-bold text-white mb-3">Hotel</h3>
+                            <p class="small --text-muted mb-0">SEO for hotels, resorts, homestays and hospitality brands to increase bookings improve local search visibility and build a strong online presence for growth and brand authority</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <div class="industry-img-wrapper">
+                            <img src="Images/Education-SEO.png" alt="Education SEO">
+                        </div>
+                        <div class="p-4 text-center flex-grow-1 d-flex flex-column">
+                            <h3 class="h4 fw-bold text-white mb-3">Education</h3>
+                            <p class="small --text-muted mb-0">SEO services for educational institutions, coaching professionals, online tutors, and training centers that want to reach more students, improve search visibility, and strengthen their digital presence.</p>
                         </div>
                     </div>
                 </div>
@@ -1123,7 +1241,7 @@
                     </p>
                     <div class="d-flex gap-3">
                         <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
                         <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
                         <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
                     </div>
