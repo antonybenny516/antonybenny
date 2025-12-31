@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /blog.html
-
 Sitemap: https://www.antonybennyseo.in/sitemap.xml
