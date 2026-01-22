@@ -89,8 +89,22 @@
   </url>
 
   <url>
-    <loc>https://www.antonybennyseo.in/how-local-seo-works-for-businesses.html</loc>
+    <loc>https://www.antonybennyseo.in/Blogs/how-local-seo-works-for-businesses.html</loc>
     <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.antonybennyseo.in/Blogs/what-is-0ff-page-seo.html</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.antonybennyseo.in/Blogs/why-on-page-seo-is-important-for-google-rankings.html</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
