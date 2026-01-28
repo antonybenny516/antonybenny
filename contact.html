@@ -3,12 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antony Benny | SEO Expert in Kerala</title>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title -->
     <title>Contact Antony Benny | SEO Expert in Kerala</title>
 
     <!-- Meta Description -->
@@ -276,7 +270,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
@@ -300,28 +294,31 @@
                 <div class="col-lg-6">
                     <div class="contact-card">
                         <h3 class="h3 fw-bold text-white mb-4">Send Me a Message</h3>
-                        <form>
+                        <!-- Form connected to Google Form -->
+                        <form id="portfolio-contact-form">
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label class="form-label small text-muted">Name</label>
-                                    <input type="text" class="form-control" placeholder="Your Name">
+                                    <input type="text" name="entry.1814419371" class="form-control" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small text-muted">Email</label>
-                                    <input type="email" class="form-control" placeholder="your@email.com">
+                                    <input type="email" name="entry.841425161" class="form-control" placeholder="your@email.com" required>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label small text-muted">Website URL (Optional)</label>
-                                <input type="url" class="form-control" placeholder="https://example.com">
+                                <input type="url" name="entry.869385120" class="form-control" placeholder="https://example.com">
                             </div>
                             <div class="mb-4">
                                 <label class="form-label small text-muted">Message</label>
-                                <textarea rows="4" class="form-control" placeholder="Tell me about your business goals..."></textarea>
+                                <textarea name="entry.252903103" rows="4" class="form-control" placeholder="Tell me about your business goals..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold d-flex align-items-center justify-content-center gap-2 rounded-pill">
-                                Send Message <i class="bi bi-send-fill"></i>
+                            <button type="submit" id="submit-btn" class="btn btn-primary w-100 py-3 fw-bold d-flex align-items-center justify-content-center gap-2 rounded-pill">
+                                <span id="btn-text">Send Message</span> <i class="bi bi-send-fill"></i>
                             </button>
+                            <!-- Feedback Message -->
+                            <div id="form-feedback" class="mt-3 text-center small" style="display: none;"></div>
                         </form>
                     </div>
                 </div>
@@ -428,5 +425,49 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Form Handling Script -->
+    <script>
+        const contactForm = document.getElementById('portfolio-contact-form');
+        const feedback = document.getElementById('form-feedback');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Set Loading state
+            submitBtn.disabled = true;
+            btnText.innerText = "Sending...";
+            feedback.style.display = "block";
+            feedback.className = "mt-3 text-center small text-muted";
+            feedback.innerText = "Processing your message...";
+
+            const formData = new FormData(contactForm);
+            const googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSci_pGVeNmUDdiWoV4moV5ekmgfNTltRzCzGQScptIsGrg4Jw/formResponse";
+
+            try {
+                // We use no-cors mode because Google Forms doesn't support CORS requests for direct formResponse submissions
+                // This means the browser won't let us see the 'success' response, but it still sends the data.
+                await fetch(googleFormUrl, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                });
+
+                // Since we can't read the response in no-cors, we assume success if no error was thrown
+                feedback.className = "mt-3 text-center small text-success";
+                feedback.innerHTML = "<i class='bi bi-check-circle-fill'></i> Message sent successfully!";
+                contactForm.reset();
+            } catch (error) {
+                console.error('Submission error:', error);
+                feedback.className = "mt-3 text-center small text-danger";
+                feedback.innerText = "Error sending message. Please try again.";
+            } finally {
+                submitBtn.disabled = false;
+                btnText.innerText = "Send Message";
+            }
+        });
+    </script>
 </body>
 </html>
