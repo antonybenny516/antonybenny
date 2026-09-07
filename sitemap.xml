@@ -23,6 +23,50 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Services -->
+  <url>
+    <loc>https://antonybennyseo.in/services/on-page-seo-services-kerala.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://antonybennyseo.in/services/off-page-seo-services-kerala.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://antonybennyseo.in/services/technical-seo-services-kerala.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://antonybennyseo.in/services/local-seo-services-kerala.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://antonybennyseo.in/privacy-policy.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://antonybennyseo.in/terms-and-conditions.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- blogs page -->
   <url>
     <loc>https://antonybennyseo.in/blog.html</loc>
