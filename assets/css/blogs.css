@@ -158,3 +158,84 @@
             color: var(--text-muted); text-decoration: none; transition: all 0.3s;
         }
         .social-link:hover { background-color: var(--accent); color: white; border-color: var(--accent); }
+
+        /* ============================================================
+           Related Articles Sidebar
+           TEST implementation — scoped to pages with .blog-with-related
+           on <main>, so these rules do not affect other blog pages.
+           ============================================================ */
+        .blog-with-related .article-content {
+            max-width: 1140px;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .related-articles-sidebar {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 1.75rem;
+            position: sticky;
+            top: 6.5rem; /* fixed navbar (~79px) + comfortable gap */
+        }
+
+        .related-articles-sidebar h2 {
+            font-size: 1.15rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .related-article {
+            background: transparent;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .related-article:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .related-article a {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            text-decoration: none;
+        }
+
+        .related-article-image {
+            width: 68px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .related-article-title {
+            color: var(--text-main);
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.4;
+            transition: color 0.2s ease;
+        }
+
+        .related-article a:hover .related-article-title {
+            color: var(--accent);
+        }
+
+        @media (max-width: 991.98px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .related-articles-sidebar {
+                position: static;
+                top: auto;
+                margin-top: 3rem;
+            }
+        }
