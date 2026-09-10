@@ -866,6 +866,60 @@
         </div>
     </section>
 
+    <!-- Location / Map -->
+    <section id="location" class="section-padding" aria-labelledby="location-heading">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <span class="location-eyebrow d-block mb-3">Location</span>
+                    <h2 id="location-heading" class="display-5 fw-bold text-white mb-3">SEO Expert in Kerala</h2>
+                    <p class="mb-4">Based in Thrissur, Kerala, I help businesses and professionals improve their search visibility through strategic SEO.</p>
+
+                    <div class="d-flex flex-column gap-3 mb-4">
+                        <div class="d-flex gap-3 align-items-start">
+                            <div class="icon-box flex-shrink-0 mb-0"><i class="bi bi-geo-alt fs-5"></i></div>
+                            <div>
+                                <div class="small text-muted">Location</div>
+                                <div class="fw-bold text-white">Thrissur, Kerala, India</div>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 align-items-start">
+                            <div class="icon-box flex-shrink-0 mb-0"><i class="bi bi-map fs-5"></i></div>
+                            <div>
+                                <div class="small text-muted">Service Coverage</div>
+                                <div class="fw-bold text-white">Kerala</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Kerala%2C+India" target="_blank" rel="noopener" class="btn btn-hero-secondary rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2" aria-label="Open Kerala, India in Google Maps (opens in a new tab)">
+                        Open in Maps <i class="bi bi-box-arrow-up-right"></i>
+                    </a>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="map-card">
+                        <div class="map-overlay-badge"><i class="bi bi-geo-alt-fill text-accent"></i> Kerala, India</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Kerala%2C+India" target="_blank" rel="noopener" class="map-open-link" aria-label="Open Kerala, India in Google Maps (opens in a new tab)">
+                            Open in Maps <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                        <div class="map-container"
+                             aria-label="Interactive map of Kerala with Thrissur highlighted"
+                             data-location-map='{"boundaryUrl":"assets/geo/kerala-state.geojson","highlight":{"coords":[10.5276,76.2144],"label":"Thrissur, Kerala"},"fallbackCenter":[10.54,76.14],"fallbackZoom":7}'>
+                            <div class="map-loading">Loading interactive map&hellip;</div>
+                            <noscript>
+                                <div class="p-4 text-center small text-muted">
+                                    Interactive map requires JavaScript.
+                                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Kerala%2C+India" target="_blank" rel="noopener">View Kerala on Google Maps</a>.
+                                </div>
+                            </noscript>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -924,5 +978,8 @@
 
     <!-- Form Handling Script -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Location Map -->
+    <script src="assets/js/location-map.js" defer></script>
 </body>
 </html>
