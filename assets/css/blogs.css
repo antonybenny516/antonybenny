@@ -239,3 +239,57 @@
                 margin-top: 3rem;
             }
         }
+
+        /* FAQ Accordion (matches main.css FAQ accordion styling) */
+        .blog-body .accordion {
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .blog-body .accordion-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+            border-radius: 1rem !important;
+            overflow: hidden;
+        }
+
+        .blog-body .accordion-header {
+            margin: 0;
+        }
+
+        .blog-body .accordion-button {
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 1.25rem 1.5rem;
+            box-shadow: none !important;
+        }
+
+        .blog-body .accordion-button:not(.collapsed) {
+            background-color: rgba(59, 130, 246, 0.05);
+            color: var(--accent);
+        }
+
+        .blog-body .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--accent-glow) !important;
+        }
+
+        .blog-body .accordion-button::after {
+            filter: invert(1) grayscale(100%) brightness(200%);
+            background-size: 1rem;
+        }
+
+        .blog-body .accordion-body {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .blog-body .accordion-body p {
+            margin-bottom: 0;
+        }
