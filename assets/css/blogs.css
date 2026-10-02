@@ -293,3 +293,86 @@
         .blog-body .accordion-body p {
             margin-bottom: 0;
         }
+
+        /* Breadcrumb (scoped to .blog-breadcrumb) */
+        .blog-breadcrumb ol {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .blog-breadcrumb li + li::before {
+            content: "/";
+            margin-right: 0.4rem;
+            color: var(--border-color);
+        }
+
+        .blog-breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .blog-breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .blog-breadcrumb [aria-current="page"] {
+            color: var(--text-main);
+        }
+
+        /* Article tables (scoped to .blog-table) */
+        .blog-table-wrap {
+            /* keep table min-content from widening the article grid column */
+            width: 0;
+            min-width: 100%;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            background-color: var(--bg-card);
+        }
+
+        .blog-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        .blog-table th,
+        .blog-table td {
+            padding: 0.9rem 1.1rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-table th {
+            color: var(--text-main);
+            font-weight: 600;
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+
+        .blog-table td {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .blog-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 575.98px) {
+            .blog-table {
+                font-size: 0.9rem;
+            }
+            .blog-table th,
+            .blog-table td {
+                padding: 0.7rem 0.75rem;
+            }
+        }
