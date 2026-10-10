@@ -327,6 +327,37 @@
             color: var(--text-main);
         }
 
+        /* Ordered lists, pro tips and inline CTA box */
+        .blog-body ol {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .blog-body .blog-tip {
+            border-left: 3px solid var(--accent);
+            background-color: var(--accent-glow);
+            padding: 1rem 1.25rem;
+            border-radius: 0 0.75rem 0.75rem 0;
+        }
+
+        .blog-body .blog-tip strong,
+        .blog-cta-box strong {
+            color: var(--text-main);
+        }
+
+        .blog-cta-box {
+            margin: 3rem 0;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            background-color: var(--bg-card);
+        }
+
+        .blog-body .blog-cta-box p {
+            margin-bottom: 0;
+        }
+
         /* Article tables (scoped to .blog-table) */
         .blog-table-wrap {
             /* keep table min-content from widening the article grid column */
