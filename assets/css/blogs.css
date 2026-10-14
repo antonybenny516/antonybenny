@@ -358,6 +358,40 @@
             margin-bottom: 0;
         }
 
+        /* Quick answer box and sample-text blockquote */
+        .blog-quick-answer {
+            margin: 2.5rem 0;
+            padding: 1.5rem 1.75rem;
+            border: 1px solid var(--accent);
+            border-radius: 1rem;
+            background-color: var(--accent-glow);
+        }
+
+        .blog-quick-answer strong {
+            color: var(--text-main);
+        }
+
+        .blog-body .blog-quick-answer ol {
+            margin-bottom: 1rem;
+        }
+
+        .blog-body .blog-quick-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-body blockquote {
+            margin: 0 0 2rem;
+            padding: 1rem 1.25rem;
+            border-left: 3px solid var(--border-color);
+            background-color: var(--bg-card);
+            border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic;
+        }
+
+        .blog-body blockquote p {
+            margin-bottom: 0;
+        }
+
         /* Article tables (scoped to .blog-table) */
         .blog-table-wrap {
             /* keep table min-content from widening the article grid column */
